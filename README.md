@@ -31,4 +31,4 @@ npm install
 npm run dev
 ```
 
-![1756341238543](image/README/1756341238543.png)
+![database-screenshot](image/README/database-screenshot.png)
