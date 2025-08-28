@@ -4,12 +4,16 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
   }
   
   .logo {
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center;
+    margin-bottom: 20px;
   }
   
   #tf-logo {
@@ -20,8 +24,76 @@ body {
   h1 {
     text-align: center;
     color: #333;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    color: #555;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
   }
   
+  /* Form Styles */
+  .form-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0,123,255,0.3);
+  }
+
+  button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+
+  /* Table Styles */
+  .table-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
   table {
     width: 100%;
     border-collapse: collapse;
@@ -36,11 +108,58 @@ body {
   
   th,
   td {
-    padding: 8px;
+    padding: 12px;
     text-align: left;
   }
   
   th {
-    background-color: #f2f2f2;
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #555;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f8f9fa;
+  }
+
+  tr:hover {
+    background-color: #e9ecef;
+  }
+
+  /* Delete Button */
+  .delete-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+
+  .delete-btn:hover {
+    background-color: #c82333;
+  }
+
+  /* Message Styles */
+  .message {
+    padding: 12px 20px;
+    margin: 15px 0;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+
+  .message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
   }
   
