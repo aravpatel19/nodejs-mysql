@@ -1,6 +1,6 @@
-CREATE DATABASE tf_demo;
+CREATE DATABASE nodejs_mysql_db;
 
-use tf_demo;
+use nodejs_mysql_db;
 
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
