@@ -15,12 +15,18 @@ app.use(express.urlencoded({ extended: true }));
 // Set the public directory for static files
 app.use(express.static(path.join(__dirname, "public")));
 
-// connect to db
-const db = mysql.createConnection({
+// connect to db with connection pooling
+const db = mysql.createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
   database: process.env.DB_NAME,
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0,
+  acquireTimeout: 60000,
+  timeout: 60000,
+  reconnect: true
 });
 
 // Route to serve the HTML file
@@ -85,10 +91,14 @@ app.delete(`/${tableName}/:id`, (req, res) => {
   });
 });
 
-// test connection
-db.connect((err) => {
-  if (err) throw err;
-  console.log("Connected to database!");
+// test connection pool
+db.getConnection((err, connection) => {
+  if (err) {
+    console.error("Database connection pool error:", err);
+    throw err;
+  }
+  console.log("Database connection pool ready!");
+  connection.release();
 });
 
 // Start the server
